@@ -56,11 +56,11 @@ else:
   # check if screensaver is running
   if True:
     # screensaver is *NOT* running - save starttime, if no data exists
-    print (data['last_update'].day)
-    print (current.day)
     if data['last_update'].day != current.day:
       print("Setting last_update to %s", current)
       data['last_update'] = current
+    else:
+      print("Sameday - nothing to do")
 
 data['last_update'] = current
 pickle.dump( data, open( args.datafile, "wb" ) )
